@@ -46,5 +46,3 @@ Then in Chrome:
 6. Use the cog in the sidepanel to open settings if you want to change the proxy URL or model
 7. you will almost certainly need to change the model
 
-# chromey
-# chromey
