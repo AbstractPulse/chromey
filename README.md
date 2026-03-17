@@ -1,4 +1,6 @@
-# Chromey
+# Chromey!
+[chromey-header-12x](https://github.com/user-attachments/assets/b0f7281a-4b39-4b46-a97f-503768e144f7)
+
 
 This folder is the cleaned snapshot intended for GitHub publication. It keeps the working app structure, but leaves out local-only state such as virtual environments, old prototypes, and backup folders.
 
