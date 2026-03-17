@@ -10,7 +10,21 @@
   <a href="#install">Install</a> •
 </p>
 
-This folder is the cleaned snapshot intended for GitHub publication. It keeps the working app structure, but leaves out local-only state such as virtual environments, old prototypes, and backup folders.
+
+Chromey is a local Chrome automation companion with a built-in sidepanel chat. It connects Chrome, LM Studio, and browser-use into one simple workflow, so you can give natural-language instructions and watch the browser carry them out live. The goal is to keep local browser control simple, visible, and practical: one proxy, one extension, one chat interface.
+
+
+<h2>Future Features</h2>
+
+<ul>
+  <li>Task history with saved runs, screenshots, and outcomes</li>
+  <li>OpenClaw integration and broader agent interoperability</li>
+  <li>Support for more local and hosted model backends beyond LM Studio</li>
+  <li>Better long-running task memory and session continuity</li>
+  <li>Improved workflow handling for research, shopping, and multi-step browsing</li>
+  <li>Richer diagnostics, setup checks, and debugging tools</li>
+</ul>
+
 
 ## Quick Start
 
