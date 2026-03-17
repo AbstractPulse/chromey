@@ -16,9 +16,18 @@ This folder is the cleaned snapshot intended for GitHub publication. It keeps th
 
 The recommended path is:
 
-1. Create the Conda environment named `chromey`
+1. Create the Conda environment named `chromey` (optional)
+```bash
+create conda -n chromey python=3.11 -y
+```
 2. Install dependencies with `uv`
+
+if you dont have uv:
+```bash
+pip install uv
+```
 3. Run Chromey and let it launch Chrome
+
 4. Load the extension in that Chrome window
 
 Use the full guide in [`INSTALL.md`](INSTALL.md).
