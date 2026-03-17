@@ -18,7 +18,9 @@
   </a>
 </p>
 <p align="center">
-  <sub>BTC: bitcoin:bc1quctuk6435rcmfpvzge05yqcdajng8g3dydl4hq?message=recieve</sub>
+  <sub>```bash
+    bitcoin:bc1quctuk6435rcmfpvzge05yqcdajng8g3dydl4hq?message=recieve
+  ```</sub>
 </p>
 
 
