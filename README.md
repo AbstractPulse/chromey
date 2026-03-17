@@ -8,7 +8,6 @@
 <p align="center">
   <a href="#quick-start">Quick Start</a> •
   <a href="#install">Install</a> •
-  <a href="#api">API</a>
 </p>
 
 This folder is the cleaned snapshot intended for GitHub publication. It keeps the working app structure, but leaves out local-only state such as virtual environments, old prototypes, and backup folders.
