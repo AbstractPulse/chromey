@@ -7,7 +7,18 @@
 <p align="center">Chrome-native local browser agent with LM Studio and browser-use.</p>
 <p align="center">
   <a href="#quick-start">Quick Start</a> •
-  <a href="#install">Install</a> •
+  <a href="#install">Install</a> 
+</p>
+<p align="center">
+  <a href="bitcoin:YOUR_BTC_ADDRESS">
+    <img
+      src="https://img.shields.io/badge/Donate-Bitcoin-f7931a?style=for-the-badge&logo=bitcoin&logoColor=white"
+      alt="Donate Bitcoin"
+    />
+  </a>
+</p>
+<p align="center">
+  <sub>BTC: bitcoin:bc1quctuk6435rcmfpvzge05yqcdajng8g3dydl4hq?message=recieve</sub>
 </p>
 
 
