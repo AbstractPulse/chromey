@@ -1,6 +1,15 @@
 # Chromey!
-[chromey-header-12x](https://github.com/user-attachments/assets/b0f7281a-4b39-4b46-a97f-503768e144f7)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b0f7281a-4b39-4b46-a97f-503768e144f7" alt="Chromey demo" width="100%" />
+</p>
 
+<h1 align="center">Chromey</h1>
+<p align="center">Chrome-native local browser agent with LM Studio and browser-use.</p>
+<p align="center">
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#install">Install</a> •
+  <a href="#api">API</a>
+</p>
 
 This folder is the cleaned snapshot intended for GitHub publication. It keeps the working app structure, but leaves out local-only state such as virtual environments, old prototypes, and backup folders.
 
