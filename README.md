@@ -18,12 +18,14 @@
   </a>
 </p>
 <p align="center">
-  <sub>```bash
-    bitcoin:bc1quctuk6435rcmfpvzge05yqcdajng8g3dydl4hq?message=recieve
-  ```</sub>
+  <sub>
+
+  </sub>
 </p>
 
-
+```bash
+bitcoin:bc1quctuk6435rcmfpvzge05yqcdajng8g3dydl4hq?message=recieve
+```
 Chromey is a local Chrome automation companion with a built-in sidepanel chat. It connects Chrome, LM Studio, and browser-use into one simple workflow, so you can give natural-language instructions and watch the browser carry them out live. The goal is to keep local browser control simple, visible, and practical: one proxy, one extension, one chat interface.
 
 
