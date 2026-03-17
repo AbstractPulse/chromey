@@ -1,0 +1,36 @@
+# Copy this file to `config.yaml` in this project root, or to:
+#   ~/.config/chromey/config.yaml
+# Project-root config takes precedence over the home config.
+
+endpoint_url: "http://127.0.0.1:1234/v1"
+api_key: "lm-studio"
+model: "auto"
+
+# Set this if Chromey cannot find Chrome automatically.
+# Examples:
+#   "/usr/bin/google-chrome"
+#   "/var/lib/flatpak/exports/bin/com.google.Chrome"
+chrome_path: ""
+
+cdp_url: "http://127.0.0.1:9222"
+user_data_dir: ""
+artifacts_dir: "~/.config/chromey/artifacts"
+profile_directory: "Default"
+proxy_host: "127.0.0.1"
+proxy_port: 8089
+launch_browser: true
+show_profile_picker: false
+headless: false
+max_steps: 25
+step_timeout: 120
+max_failures: 2
+max_actions_per_step: 1
+max_completion_tokens: 1024
+llm_timeout: 180
+use_vision: true
+performance_profile: "balanced"
+
+# Optional screenshot resize override sent to the model.
+# Leave these null to let Balanced/Fast use their own defaults.
+screenshot_width: null
+screenshot_height: null

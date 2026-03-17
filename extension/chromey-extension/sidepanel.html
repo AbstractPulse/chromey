@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chromey</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="topbar">
+        <div class="topbar__copy">
+          <img class="brand-mark" src="assets/logo-header.png" alt="Chromey logo" />
+          <p class="eyebrow">Chromey</p>
+          <h1>Chat</h1>
+        </div>
+        <div class="topbar__actions">
+          <button id="newChatButton" class="text-button text-button--header" type="button">New chat</button>
+          <button id="settingsButton" class="icon-button" type="button" title="Settings" aria-label="Settings">
+            &#9881;
+          </button>
+        </div>
+      </header>
+
+      <section class="statusbar" aria-live="polite">
+        <span id="modelChip" class="chip chip--model">Auto (prefer IQ4)</span>
+        <span id="runtimeChip" class="chip chip--runtime" data-state="idle">Connecting</span>
+      </section>
+
+      <section class="chat-shell">
+        <div class="chat-shell__body">
+          <section id="emptyState" class="empty-state" hidden>
+            <h2>Ask Chrome to do something.</h2>
+            <p>Summarize the current tab, navigate somewhere, fill a form, or redirect the running task with a follow-up.</p>
+          </section>
+
+          <section id="messages" class="messages" aria-live="polite"></section>
+        </div>
+
+        <form id="composerForm" class="composer">
+          <span class="sr-only">Message</span>
+          <textarea
+            id="messageInput"
+            rows="1"
+            placeholder="Message Chromey"
+          ></textarea>
+          <div class="composer__actions">
+            <button id="stopButton" class="text-button" type="button" hidden>Stop</button>
+            <button id="sendButton" class="button" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

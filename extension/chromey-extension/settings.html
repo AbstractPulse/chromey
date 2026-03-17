@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chromey Settings</title>
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <main class="settings-page">
+      <header class="settings-hero">
+        <div>
+          <img class="hero-mark" src="assets/logo-header.png" alt="Chromey logo" />
+          <p class="eyebrow">Chromey</p>
+          <h1>Settings</h1>
+          <p class="hero-copy">Choose the local proxy URL, type the LM Studio model id you want, tune the chat colors, and switch between balanced and fast agent behavior.</p>
+        </div>
+        <span id="saveStatus" class="save-status save-status--hero">Unsaved</span>
+      </header>
+
+      <nav class="settings-tabs" aria-label="Settings sections">
+        <button class="settings-tab is-active" type="button" data-tab="general">General</button>
+        <button class="settings-tab" type="button" data-tab="performance">Performance</button>
+      </nav>
+
+      <div class="tab-panel is-active" data-tab-panel="general">
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>Connection</h2>
+            <p>These settings stay local inside the extension.</p>
+          </div>
+        </div>
+
+        <label class="field">
+          <span class="field__label">Proxy URL</span>
+          <input id="proxyUrlInput" type="text" spellcheck="false" placeholder="http://127.0.0.1:8089" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Model</span>
+          <input
+            id="modelInput"
+            type="text"
+            spellcheck="false"
+            placeholder="Leave blank for auto, or type an exact LM Studio model id"
+          />
+          <span id="modelHint" class="field__hint">Leave this blank to auto-prefer an IQ4 model, or type the exact LM Studio model id.</span>
+        </label>
+
+        <div class="actions">
+          <button id="saveButton" class="button" type="button">Save</button>
+          <button id="testButton" class="button button--ghost" type="button">Test connection</button>
+          <button id="refreshModelsButton" class="button button--ghost" type="button">Refresh models</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>Appearance</h2>
+            <p>Pick the colors Chromey uses in the sidepanel chat.</p>
+          </div>
+        </div>
+
+        <div class="color-grid">
+          <label class="field field--color">
+            <span class="field__label">Page background</span>
+            <input id="pageBackgroundInput" type="color" value="#081018" />
+          </label>
+
+          <label class="field field--color">
+            <span class="field__label">Chat panel</span>
+            <input id="panelBackgroundInput" type="color" value="#0c141f" />
+          </label>
+
+          <label class="field field--color">
+            <span class="field__label">Assistant bubble</span>
+            <input id="assistantBubbleInput" type="color" value="#1a2434" />
+          </label>
+
+          <label class="field field--color">
+            <span class="field__label">Your bubble</span>
+            <input id="userBubbleInput" type="color" value="#3e89e7" />
+          </label>
+
+          <label class="field field--color">
+            <span class="field__label">Accent</span>
+            <input id="accentInput" type="color" value="#76c2ff" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="resetThemeButton" class="button button--ghost" type="button">Reset colors</button>
+        </div>
+
+        <div id="themePreview" class="theme-preview">
+          <div class="theme-preview__shell">
+            <div class="theme-preview__messages">
+              <article class="theme-preview__message theme-preview__message--assistant">
+                <span class="theme-preview__meta">Chromey</span>
+                <p class="theme-preview__body">I can browse, compare, and summarize in Chrome.</p>
+              </article>
+              <article class="theme-preview__message theme-preview__message--user">
+                <span class="theme-preview__meta">You</span>
+                <p class="theme-preview__body">Find a good RTX 3060 deal.</p>
+              </article>
+            </div>
+            <div class="theme-preview__composer">
+              <div class="theme-preview__input">Message Chromey</div>
+              <div class="theme-preview__send">Send</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>Status</h2>
+            <p>Live checks against the local proxy.</p>
+          </div>
+        </div>
+
+        <dl class="status-grid">
+          <div class="status-item">
+            <dt>Proxy</dt>
+            <dd id="proxyStatus">Checking</dd>
+          </div>
+          <div class="status-item">
+            <dt>LM Studio</dt>
+            <dd id="providerStatus">Checking</dd>
+          </div>
+          <div class="status-item">
+            <dt>Chrome</dt>
+            <dd id="browserStatus">Checking</dd>
+          </div>
+          <div class="status-item">
+            <dt>Loaded models</dt>
+            <dd id="modelsStatus">-</dd>
+          </div>
+          <div class="status-item">
+            <dt>Artifacts</dt>
+            <dd id="artifactsStatus">-</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>Conversation</h2>
+            <p>The sidepanel stores recent messages locally so reopening it feels continuous.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="clearConversationButton" class="button button--ghost" type="button">Clear conversation</button>
+        </div>
+      </section>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="performance" hidden>
+        <section class="card">
+          <div class="card__header">
+            <div>
+              <h2>Performance</h2>
+              <p>Balanced uses richer context and stronger defaults. Fast trims the prompt for slower local models.</p>
+            </div>
+          </div>
+
+          <fieldset class="choice-group">
+            <legend class="field__label">Agent profile</legend>
+            <label class="choice-option">
+              <input id="performanceBalancedInput" type="radio" name="performanceProfile" value="balanced" />
+              <span>
+                <strong>Balanced</strong>
+                <small>Fuller browser context, larger screenshots, better task follow-through.</small>
+              </span>
+            </label>
+            <label class="choice-option">
+              <input id="performanceFastInput" type="radio" name="performanceProfile" value="fast" />
+              <span>
+                <strong>Fast</strong>
+                <small>Smaller screenshots and tighter prompts for slower models or weaker quantizations.</small>
+              </span>
+            </label>
+          </fieldset>
+
+          <label class="toggle-field">
+            <input id="useVisionInput" type="checkbox" />
+            <span>
+              <strong>Use screenshots</strong>
+              <small>Send browser screenshots to the model while Chromey works.</small>
+            </span>
+          </label>
+
+          <div class="dimension-grid">
+            <label class="field">
+              <span class="field__label">Screenshot width</span>
+              <input id="screenshotWidthInput" type="number" min="256" max="2048" step="1" placeholder="Profile default" />
+              <span class="field__hint">Leave blank to use the preset default for the selected performance profile.</span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Screenshot height</span>
+              <input id="screenshotHeightInput" type="number" min="256" max="2048" step="1" placeholder="Profile default" />
+              <span class="field__hint">Chromey resizes screenshots to this size before sending them to the model.</span>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="savePerformanceButton" class="button" type="button">Save performance</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="settings.js"></script>
+  </body>
+</html>
